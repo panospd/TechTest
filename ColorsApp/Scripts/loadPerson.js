@@ -54,7 +54,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
     $('#update-form').on('click', '#save-changes', function (e) {
         e.preventDefault();
 
-        //location.reload(true);
+        window.location.reload(true);
 
         if ($('#person-authorised').is(":checked")) {
             vm.isAuthorised = true;
