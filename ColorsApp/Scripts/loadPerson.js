@@ -15,6 +15,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
             var jsonObj = JSON.parse(data.responseText);
 
             vm = jsonObj;
+            
             $('#person-name').text(jsonObj.fullName);
 
             if (jsonObj.isAuthorised)
@@ -27,14 +28,22 @@ $('#peopleTbl tbody').on('click', 'a', function () {
                 var lowCaseValue = value.name.toLowerCase();
                 $('#colour-' + lowCaseValue).prop("checked", true);
             });
+
+            
+
         },
         success: function (data) {
             
         }
     });
 
-    $('#cancel').on('click', function (e) {
+    $('#update-form').unbind().on('click', '#cancel', function (e) {
+        e.stopPropagation();
         e.preventDefault();
-        console.log("Cancel");
+        $("#peopleTbl").parents('#table-container').first().toggle();
+        $("#person-container").hide();
+        console.log("cancel");
     });
+
+    
 });
