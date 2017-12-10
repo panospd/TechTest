@@ -13,7 +13,9 @@ namespace ColorsApp.App_Start
         {
             Mapper.CreateMap<Person, PersonDto>().
                 ForMember(dto => dto.Colours, opt => opt.MapFrom(x => x.Colours));
-            Mapper.CreateMap<PersonDto, Person>();
+
+            Mapper.CreateMap<PersonDto, Person>()
+                .ForMember(x => x.Colours, opt => opt.Ignore());
 
             Mapper.CreateMap<Colour, ColourDto>();
             Mapper.CreateMap<ColourDto, Colour>();

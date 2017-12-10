@@ -37,6 +37,8 @@ namespace ColorsApp.Controllers.api
                 return NotFound();
 
             return Ok(Mapper.Map<Person, PersonDto>(person));
+
+
         }
 
         [HttpPut]
@@ -51,6 +53,7 @@ namespace ColorsApp.Controllers.api
                 return NotFound();
 
             Mapper.Map(personDto, personInDb);
+            
 
             _context.SaveChanges();
 
