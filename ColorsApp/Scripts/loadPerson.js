@@ -42,7 +42,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
         e.preventDefault();
         $("#peopleTbl").parents('#table-container').first().toggle();
         $("#person-container").hide();
-        console.log("cancel");
+        $('input[type=checkbox]').attr('checked', false);
     });
 
     
