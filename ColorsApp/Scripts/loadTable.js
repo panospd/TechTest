@@ -20,6 +20,17 @@ $(document).ready(function () {
                 },
 
                 {
+                    data: "isPalindrome",
+                    render: function (data, type, person) {
+                        if (data)
+                            return "<p class='font-weight-bold text-success'>Yes</p>";
+
+                        return "<p class='font-weight-bold text-danger'>No</p>";
+                    }
+
+                },
+
+                {
                     data: "isAuthorised",
                     render: function (data, type, person) {
                         if (data)

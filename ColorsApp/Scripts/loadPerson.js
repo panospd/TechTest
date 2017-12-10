@@ -54,7 +54,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
     $('#update-form').on('click', '#save-changes', function (e) {
         e.preventDefault();
 
-        location.reload(true);
+        
 
         if ($('#person-authorised').is(":checked")) {
             vm.isAuthorised = true;
@@ -113,10 +113,14 @@ $('#peopleTbl tbody').on('click', 'a', function () {
         }).done(function (response) {
             console.log(vm);
             
+        }).success(function () {
+            window.location.reload(true);
+
         }).error(function (err) {
             
             });
 
+        
         
     });
 

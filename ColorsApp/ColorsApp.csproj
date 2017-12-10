@@ -177,6 +177,7 @@
       <DependentUpon>TechTestModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringClasses\Pallindrome.cs" />
     <Compile Include="TechTestModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

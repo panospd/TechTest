@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using ColorsApp.StringClasses;
 
 namespace ColorsApp.Dtos
 {
+    
     [DataContract]
     public class PersonDto
     {
@@ -26,6 +28,15 @@ namespace ColorsApp.Dtos
             }
             
         }
+
+        [DataMember]
+        public bool IsPalindrome {
+            get
+            {
+                return FullName.ToUpper().Replace(" ", "").isPallindrome();
+            }
+        }
+
         [DataMember]
         public bool IsAuthorised { get; set; }
         
