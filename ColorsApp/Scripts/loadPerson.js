@@ -1,6 +1,7 @@
 ﻿
 $('#peopleTbl tbody').on('click', 'a', function () {
     var linkBtn = $(this);
+    var vm = {};
     
 
     $.ajax({
@@ -12,9 +13,9 @@ $('#peopleTbl tbody').on('click', 'a', function () {
             $("#person-container").show();
 
             var jsonObj = JSON.parse(data.responseText);
-            $('#person-name').text(jsonObj.fullName);
 
-            console.log(jsonObj);
+            vm = jsonObj;
+            $('#person-name').text(jsonObj.fullName);
 
             if (jsonObj.isAuthorised)
                 $('#person-authorised').prop("checked", true);
@@ -29,7 +30,11 @@ $('#peopleTbl tbody').on('click', 'a', function () {
         },
         success: function (data) {
             
-
         }
+    });
+
+    $('#cancel').on('click', function (e) {
+        e.preventDefault();
+        console.log("Cancel");
     });
 });
