@@ -49,12 +49,21 @@ namespace ColorsApp.Controllers.api
 
             var personInDb = _context.People.SingleOrDefault(c => c.PersonId == id);
 
+            
+            
             if (personInDb == null)
                 return NotFound();
-
-            Mapper.Map(personDto, personInDb);
             
+            
+            Mapper.Map(personDto, personInDb);
 
+
+            foreach(var obj in personDto.Colours)
+            {
+                personInDb.Colours.Add(_context.Colours.SingleOrDefault(c => c.ColourId == obj.ColourId));
+                
+            }
+            
             _context.SaveChanges();
 
             return Ok();
