@@ -386,6 +386,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loadPerson.js" />
+    <Content Include="Scripts\loadTable.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -399,6 +401,9 @@
       <DependentUpon>TechTestModel.edmx</DependentUpon>
       <LastGenOutput>TechTestModel.cs</LastGenOutput>
     </Content>
+    <None Include="Views\Home\person.cshtml" />
+    <Content Include="Views\Home\PersonView.cshtml" />
+    <None Include="Views\Home\TableView.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

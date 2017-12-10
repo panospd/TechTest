@@ -8,7 +8,6 @@ namespace ColorsApp.Controllers
 {
     public class HomeController : Controller
     {
-        TechTestDbContext _context = new TechTestDbContext();
         public ActionResult Index()
         {
             
