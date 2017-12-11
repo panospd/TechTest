@@ -115,7 +115,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
                 //window.location.reload(true);
 
         }).error(function (err) {
-            alert("There was an error with your request!")
+            alert("There was an error with your request!");
             });
 
         
