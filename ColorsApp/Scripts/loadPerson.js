@@ -1,10 +1,12 @@
 ﻿
 $('#peopleTbl tbody').on('click', 'a', function () {
-
-    $('#update-form').on('click', '.form-check-label', function () {
-        var inputBox = $(this).attr("for");
+    
+    $('label').click(function (e) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        var inputBox = $(this).attr('for');
         console.log(inputBox);
-        $("#" + inputBox).toggle();
+        $("#" + inputBox).bind().toggle();
     });
 
     var linkBtn = $(this);
@@ -15,7 +17,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
         dataType: 'application/json',
         complete: function (data) {
 
-            $("#peopleTbl").parents('#table-container').first().toggle();
+            $("#peopleTbl").parents('#table-container').toggle();
             $("#person-container").show();
 
             var jsonObj = JSON.parse(data.responseText);
@@ -45,17 +47,16 @@ $('#peopleTbl tbody').on('click', 'a', function () {
     $('#update-form').unbind().on('click', '#cancel', function (e) {
         e.stopPropagation();
         e.preventDefault();
-        $("#peopleTbl").parents('#table-container').first().toggle();
-        $("#person-container").hide();
+
+        $("#peopleTbl").parents('#table-container').toggle();
+        $("#person-container").toggle();
         $('input[type=checkbox]').attr('checked', false);
     });
 
 
     $('#update-form').on('click', '#save-changes', function (e) {
         e.preventDefault();
-
         
-
         if ($('#person-authorised').is(":checked")) {
             vm.isAuthorised = true;
         } else {
