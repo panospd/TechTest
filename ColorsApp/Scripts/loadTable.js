@@ -1,8 +1,5 @@
-﻿
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     
-
          var table = $("#peopleTbl").DataTable({
 
             ajax: {

@@ -94,15 +94,13 @@ $('#peopleTbl tbody').on('click', 'a', function () {
 
                 if (found) {
 
-                    var index2 = vm.colours.map(function (o) { return o.name; }).indexOf(checkbox.attr('data-colour-name'));
+                    var index = vm.colours.map(function (o) { return o.name; }).indexOf(checkbox.attr('data-colour-name'));
                     
-                    if (index2 !== -1)
-                        vm.colours.splice(index2, 1);
+                    if (index !== -1)
+                        vm.colours.splice(index, 1);
                 }
             }
         });
-        
-        
         $.ajax({
             url: '/api/people/' + vm.personId,
             method: 'PUT',
@@ -117,7 +115,7 @@ $('#peopleTbl tbody').on('click', 'a', function () {
                 //window.location.reload(true);
 
         }).error(function (err) {
-            
+            alert("There was an error with your request!")
             });
 
         
