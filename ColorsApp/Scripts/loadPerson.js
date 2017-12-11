@@ -35,9 +35,6 @@ $('#peopleTbl tbody').on('click', 'a', function () {
                 var lowCaseValue = value["name"].toLowerCase();
                 $('#colour-' + lowCaseValue).prop("checked", true);
             });
-
-            
-
         },
         success: function (data) {
             
@@ -112,10 +109,12 @@ $('#peopleTbl tbody').on('click', 'a', function () {
             data: JSON.stringify(vm),
             contentType: "application/json; charset=utf-8"
         }).done(function (response) {
-            console.log(vm);
             
-        }).success(function () {
-            window.location.reload(true);
+            }).success(function () {
+                $('#peopleTbl').DataTable().ajax.reload();
+                $("#peopleTbl").parents('#table-container').toggle();
+                $("#person-container").show();
+                //window.location.reload(true);
 
         }).error(function (err) {
             
